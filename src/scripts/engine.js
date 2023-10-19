@@ -14,7 +14,7 @@ const state = {
         vidas:3,
     },
     actions: {
-        timerId: setInterval(randomSquare,1000),
+        timerId: setInterval(randomSquare,600),
         coutDownTimerId: setInterval(countDown,1000),
     }
 }

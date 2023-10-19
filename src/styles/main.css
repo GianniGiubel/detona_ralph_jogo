@@ -29,14 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;    
+    margin-top: 1rem;      
 }
 
 .square {
     height: 150px;
     width: 150px;
     border: 1px solid #000000;
-    background-color: #7fffd4;
+    background-color: #ffa600cb;
 }
 
 .enemy {
