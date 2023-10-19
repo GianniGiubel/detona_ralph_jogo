@@ -32,6 +32,23 @@
     margin-top: 1rem;      
 }
 
+aside {
+    background-color: #000000;
+    border: 5px solid #ffd700;
+    height: 450px;
+    width: 300px;
+    margin: 20px;
+}
+aside h2 {
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
 .square {
     height: 150px;
     width: 150px;

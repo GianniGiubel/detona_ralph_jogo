@@ -5,11 +5,13 @@ const state = {
         time_left: document.querySelector('#time-left'),
         score: document.querySelector('#score'),
         life: document.querySelector('#life'),
+        table: document.querySelector('#table'),
     },
     values: {        
         gameVelocity: 1000,
         hitPosition:0,
         result:0,
+        resultRank:[],
         currentTime:60,
         vidas:3,
     },
@@ -17,6 +19,16 @@ const state = {
         timerId: setInterval(randomSquare,600),
         coutDownTimerId: setInterval(countDown,1000),
     }
+}
+
+function addScoreRank() {
+    state.values.resultRank.push(state.values.result)
+    state.values.resultRank.sort()
+    state.values.resultRank.reverse()
+    state.values.resultRank.forEach((element,index) => {
+        index++
+        state.views.table.innerHTML = `<p>${index} - ${element}</p>`
+    }) 
 }
 
 function countDown() {
@@ -27,7 +39,7 @@ function countDown() {
         clearInterval(state.actions.coutDownTimerId)
         clearInterval(state.actions.timerId)
         alert(`Game Over!Seu tempo acabou, sua pontuação foi de: ${state.values.result}`)
-        // playSound('gameover')
+        addScoreRank()    
     }
 }
 
@@ -63,6 +75,7 @@ function addListenerHitBox () {
                     clearInterval(state.actions.coutDownTimerId)
                     clearInterval(state.actions.timerId)
                     alert("Game Over!Suas vidas Acabaram!")
+                    addScoreRank()
                 }
             }
         })
