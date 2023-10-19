@@ -23,11 +23,12 @@ const state = {
 
 function addScoreRank() {
     state.values.resultRank.push(state.values.result)
-    state.values.resultRank.sort()
-    state.values.resultRank.reverse()
-    state.values.resultRank.forEach((element,index) => {
-        index++
-        state.views.table.innerHTML = `<p>${index} - ${element}</p>`
+    state.values.resultRank.sort(function(a,b){
+        return b - a
+    })    
+    state.values.resultRank.map((element,index) => { 
+        index++        
+        state.views.table.innerHTML += `<p>${index} - ${element}</p>`
     }) 
 }
 
