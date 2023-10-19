@@ -11,7 +11,7 @@ const state = {
         gameVelocity: 1000,
         hitPosition:0,
         result:0,
-        resultRank:[],
+        resultRank:[90,80,109],
         currentTime:60,
         vidas:3,
     },
